@@ -15,6 +15,6 @@ RUN apt-get -q update && apt-get install -y -q \
     $(lsb_release -cs) \
     stable" && \
     apt-get update && \
-    apt-get -y install docker-ce \
-    && rm -rf /var/lib/apt/lists/* \
-    && pip3 install -q docker-compose awscli
+    apt-get -y install docker-ce && \
+    rm -rf /var/lib/apt/lists/* && \
+    pip3 install -q docker-compose awscli
