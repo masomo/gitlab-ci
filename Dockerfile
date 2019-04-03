@@ -1,5 +1,6 @@
 FROM golang:1.11
 
+ENV LC_ALL=C.UTF-8
 RUN apt-get -q update && apt-get install -y -q \
     python3-pip \
     jq \
@@ -17,4 +18,4 @@ RUN apt-get -q update && apt-get install -y -q \
     apt-get update && \
     apt-get -y install docker-ce && \
     rm -rf /var/lib/apt/lists/* && \
-    pip3 install -q docker-compose awscli
+    pip3 install -q docker-compose awscli ansible-tower-cli
