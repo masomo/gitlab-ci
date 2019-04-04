@@ -9,7 +9,8 @@ RUN apt-get -q update && apt-get install -y -q \
     ca-certificates \
     curl \
     gnupg2 \
-    software-properties-common && \
+    software-properties-common \
+    php php-zip php-curl && \
     curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg > /tmp/dkey; apt-key add /tmp/dkey && \
     add-apt-repository \
     "deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") \
@@ -19,3 +20,5 @@ RUN apt-get -q update && apt-get install -y -q \
     apt-get -y install docker-ce && \
     rm -rf /var/lib/apt/lists/* && \
     pip3 install -q docker-compose awscli ansible-tower-cli
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
