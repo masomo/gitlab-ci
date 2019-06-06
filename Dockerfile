@@ -1,4 +1,4 @@
-FROM golang:1.11
+FROM golang:1.12.5
 
 ENV LC_ALL=C.UTF-8
 RUN apt-get -q update && apt-get install -y -q \
