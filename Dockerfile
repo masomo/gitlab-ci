@@ -11,7 +11,7 @@ RUN apt-get -q update && apt-get install -y -q \
     gnupg2 \
     openssh-server \
     software-properties-common \
-    php php-zip php-curl && \
+    php php-zip php-curl php-simplexml && \
     curl -fsSL https://download.docker.com/linux/$(. /etc/os-release; echo "$ID")/gpg > /tmp/dkey; apt-key add /tmp/dkey && \
     add-apt-repository \
     "deb [arch=amd64] https://download.docker.com/linux/$(. /etc/os-release; echo "$ID") \
