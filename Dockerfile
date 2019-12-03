@@ -1,4 +1,4 @@
-FROM 1.13.4-buster
+FROM golang:1.13.4-buster
 
 ENV LC_ALL=C.UTF-8
 RUN apt-get -q update && apt-get install -y -q \
